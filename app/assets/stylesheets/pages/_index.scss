@@ -1,2 +1,38 @@
 // Import page-specific CSS files here.
 @import "home";
+
+body {
+  background-color: #213b59;
+}
+
+ul{
+  list-style: none;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-cocktail {
+  width: 300px;
+  height: 150px;
+  background-color: #FAAF40;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  color: white;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+

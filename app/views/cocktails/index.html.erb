@@ -1,11 +1,18 @@
-<h1>Cocktails</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="https://images.squarespace-cdn.com/content/v1/56c3497560b5e97b362b4ec6/1458334633083-HO43EAUEV4JREZE35Q24/ke17ZwdGBToddI8pDm48kLN33MCaMri5_kQBC52hVftZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyqylgK486yu2adhfXJXe_419WGzblEfHOXASI1SNLnL3U5hJGSSZrBsjs2deskRFo/image-asset.png" />
+  </a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%= link_to "Add a cocktail",cocktails_new_path, class: 'btn-yellow'  %>
+  </div>
+</div>
 
-<ol>
-  <% @cocktails.each do |cocktail|  %>
-    <li>
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    </li>
-  <% end %>
-</ol>
-
-<%= link_to "Add a cocktail",cocktails_new_path  %>
+<div class="container">
+  <ul class="center">
+    <% @cocktails.each do |cocktail|  %>
+      <li>
+        <%= link_to cocktail.name, cocktail_path(cocktail), class: 'card-cocktail' %>
+      </li>
+    <% end %>
+  </ul>
+</div>
