@@ -1,18 +1,52 @@
-<h1><%= @cocktail.name %></h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="https://images.squarespace-cdn.com/content/v1/56c3497560b5e97b362b4ec6/1458334633083-HO43EAUEV4JREZE35Q24/ke17ZwdGBToddI8pDm48kLN33MCaMri5_kQBC52hVftZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyqylgK486yu2adhfXJXe_419WGzblEfHOXASI1SNLnL3U5hJGSSZrBsjs2deskRFo/image-asset.png" />
+  </a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%= link_to "Back to list", cocktails_path, class: 'btn-yellow'  %>
+  </div>
+</div>
 
-<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+  <h1><%= @cocktail.name %></h1>
+</div>
 
-<h3>Doses</h3>
 
-<% @cocktail.ingredients.each do |ingredient| %>
-  <%= ingredient.name %>
-<% end %>
+<div class="container center-show">
+  <h3>Doses</h3>
+    <% @cocktail.ingredients.each do |ingredient| %>
+       <div class="card-dose">
+        <p><%= ingredient.name %></p>
+        <% @cocktail.doses.each do |dose| %>
+          <p><%= dose.description %></p>
+          <%= link_to 'Delete', dose_path(dose), method: :delete %>
+        <% end %>
 
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %></p>
-  <%= link_to 'Delete', dose_path(dose), method: :delete %>
-<% end %>
+      </div>
+    <% end %>
 
-<%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail)  %>
-<br>
-<%= link_to "Back to list", cocktails_path  %>
+
+
+
+  <!--   <% @cocktail.ingredients.each do |ingredient| %>
+      <%= ingredient.name %>
+    <% end %>
+
+    <% @cocktail.doses.each do |dose| %>
+      <p><%= dose.description %></p>
+    <% end %>
+
+    <% @cocktail.doses.each do |dose| %>
+      <%= link_to 'Delete', dose_path(dose), method: :delete %>
+    <% end %> -->
+
+
+
+
+
+  <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: 'btn-yellow'  %>
+</div>
+
+<div class="footer">
+  <p>Mister cocktails</p>
+</div>

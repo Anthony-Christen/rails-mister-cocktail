@@ -8,7 +8,7 @@
 </div>
 
 <div class="container">
-  <ul class="center">
+  <ul class="center-index">
     <% @cocktails.each do |cocktail|  %>
       <li>
          <%= link_to cocktail_path(cocktail) do %>
@@ -20,3 +20,8 @@
     <% end %>
   </ul>
 </div>
+
+<div class="footer">
+  <p>Mister cocktails</p>
+</div>
+

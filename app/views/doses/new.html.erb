@@ -4,7 +4,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.association :ingredient, collection: Ingredient.order(:name), prompt: "Choose an ingredient" %>
   <%= f.input :description %>
-  <%= f.submit 'Add cocktail', class: 'btn btn-primary'%>
+  <%= f.submit 'Add dose', class: 'btn btn-primary'%>
 <% end %>
 
 <%= link_to "Back to cocktail", cocktail_path(params[:cocktail_id])  %>
