@@ -1,9 +1,24 @@
-<h1>Add a cocktail</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="https://images.squarespace-cdn.com/content/v1/56c3497560b5e97b362b4ec6/1458334633083-HO43EAUEV4JREZE35Q24/ke17ZwdGBToddI8pDm48kLN33MCaMri5_kQBC52hVftZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpyqylgK486yu2adhfXJXe_419WGzblEfHOXASI1SNLnL3U5hJGSSZrBsjs2deskRFo/image-asset.png" />
+  </a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%= link_to "Back to list",cocktails_path, class: 'btn-yellow'%>
+  </div>
+</div>
 
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit 'Add cocktail', class: 'btn btn-primary'%>
-<% end %>
 
-<%= link_to "Back to list",cocktails_path  %>
+
+<div class="container">
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit 'Add cocktail', class: 'btn-yellow'%>
+  <% end %>
+</div>
+
+<div class="footer">
+  <p>Mister cocktails</p>
+</div>
+
+
