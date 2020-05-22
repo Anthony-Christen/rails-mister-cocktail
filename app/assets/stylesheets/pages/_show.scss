@@ -16,13 +16,14 @@
 }
 
 .card-dose {
+  padding: 40px;
   width: 100%;
   height: 100px;
   display: flex;
   background-color: white;
   border-radius: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   p {
