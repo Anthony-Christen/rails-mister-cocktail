@@ -14,37 +14,15 @@
 
 <div class="container center-show">
   <h3>Doses</h3>
-    <% @cocktail.ingredients.each do |ingredient| %>
+    <% @cocktail.doses.each do |dose| %>
        <div class="card-dose">
-        <p><%= ingredient.name %></p>
-        <% @cocktail.doses.each do |dose| %>
-          <p><%= dose.description %></p>
-          <%= link_to 'Delete', dose_path(dose), method: :delete %>
-        <% end %>
-
+        <p><%= dose.ingredient.name %></p>
+        <p><%= dose.description %></p>
+        <p><%= link_to 'Delete', dose_path(dose), method: :delete %></p>
       </div>
     <% end %>
 
-
-
-
-  <!--   <% @cocktail.ingredients.each do |ingredient| %>
-      <%= ingredient.name %>
-    <% end %>
-
-    <% @cocktail.doses.each do |dose| %>
-      <p><%= dose.description %></p>
-    <% end %>
-
-    <% @cocktail.doses.each do |dose| %>
-      <%= link_to 'Delete', dose_path(dose), method: :delete %>
-    <% end %> -->
-
-
-
-
-
-  <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: 'btn-yellow'  %>
+  <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: 'btn-yellow margin-bottom'  %>
 </div>
 
 <div class="footer">
